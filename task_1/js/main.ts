@@ -31,6 +31,21 @@ const teacher3: Teacher = {
   contract: false,
 };
 
+interface Directors extends Teacher {
+ numberOfReports: number;
+}
+
+// Create director object
+const director1: Directors = {
+ firstName: 'John',
+ lastName: 'Doe',
+ location: 'London',
+ fullTimeEmployee: true,
+ numberOfReports: 17,
+};
+
+const directorsList: Directors[] = [director1];
+
 const teachersList: Teacher[] = [teacher1, teacher2, teacher3];
 
 function renderTeachersTable(): void {
@@ -114,6 +129,10 @@ function logTeachers(): void {
   console.log('Teacher 1:', teacher1);
   console.log('Teacher 2:', teacher2);
   console.log('Teacher 3:', teacher3);
+}
+
+function logDirectors(): void {
+ console.log('Director 1:', director1);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
